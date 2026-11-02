@@ -1,0 +1,42 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.hypothesis/
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.env
+.numba_cache/
+
+# data and run outputs stay local (rebuilt by the download and build commands)
+data/
+results/
+checkpoints/
+logs/
+*.bin
+*.gz
+*.parquet
+
+# generated paper outputs
+paper/figures/
+paper/*.pdf
+paper/icml/*.pdf
+paper/tmlr/*.pdf
+paper/**/*.log
+paper/**/*.aux
+paper/**/*.bbl
+paper/**/*.blg
+paper/**/*.out
+paper/styles/**/*.pdf
+paper/jmlr/*.pdf
+.anon_patterns
+
+# private notes (interview preparation), never published
+talk/private/
+osf_registration/
+.disk_reserve/
+
+# the inputs of the registered tests: small, part of the review supplement (experiments/export_test_inputs.py)
+!supplement/registered_tests/*.parquet
