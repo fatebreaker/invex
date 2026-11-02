@@ -76,6 +76,10 @@ def test_neural_learner_last_stage_and_roundtrip(zi_data, tmp_path):
 
 def test_learned_scales_and_identity(zi_data):
     from invex.agents import fqi_nn
+    from invex.paths import REPO
+
+    if not (REPO / "prereg" / "splits_v0.json").exists():  # a copy of the code without the frozen split
+        pytest.skip("prereg/splits_v0.json is not in this copy (python -m invex.eval.universe split writes it)")
 
     book, eps, uf = zi_data
     K = 3

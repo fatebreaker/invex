@@ -6,6 +6,8 @@ import pytest
 
 from invex.paths import REPO
 
+if not (REPO / "paper" / "make_iex_outcomes.py").exists():  # a copy of the code without the paper's sources
+    pytest.skip("paper/make_iex_outcomes.py is not in this copy", allow_module_level=True)
 spec = importlib.util.spec_from_file_location("make_iex_outcomes", REPO / "paper" / "make_iex_outcomes.py")
 mio = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(mio)
